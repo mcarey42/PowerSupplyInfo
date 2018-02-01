@@ -29,6 +29,3 @@ for ps in psList {
 }
 
 
-//var source =  IOPSCopyPowerSourcesInfo()
-//print(source)
-
