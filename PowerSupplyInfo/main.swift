@@ -8,5 +8,27 @@
 
 import Foundation
 
-print("Hello, World!")
+//import Cocoa
+import IOKit.ps
+
+let psAdapter = IOPSCopyExternalPowerAdapterDetails().takeRetainedValue()
+
+print("Power Adapter Information")
+print(psAdapter)
+
+let psInfo = IOPSCopyPowerSourcesInfo().takeRetainedValue()
+let psList = IOPSCopyPowerSourcesList(psInfo).takeRetainedValue() as [CFTypeRef]
+
+for ps in psList {
+    if let psDesc = IOPSGetPowerSourceDescription(psInfo, ps).takeUnretainedValue() as? [String: Any] {
+        print("Power Supply Descirption Enumeration:")
+        for element in psDesc {
+            print("\t",  element )
+        }
+    }
+}
+
+
+//var source =  IOPSCopyPowerSourcesInfo()
+//print(source)
 
