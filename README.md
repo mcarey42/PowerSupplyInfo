@@ -3,13 +3,13 @@ Information about Mac power supplies from the command line (written in Swift)
 
 Simple, easy example of how to query the power supply and battery information on a Mac from Swift.  
 
-This was surprisingly hard to get to, I would have expected a command line tool to have access to 
+This was surprisingly hard to get to, I would have expected a command line tool to have access to
 this kind of info, but I didn't find one when I looked, so here's a simple example tool to do it.
 
 You'll have to remove or add your own signing key for Code signing if you want to build it yourself.
 
 Output should look roughly like this:
-
+```
 Power Adapter Information
 {
     AdapterID = 5718;
@@ -22,7 +22,8 @@ Power Adapter Information
     Voltage = 20000;
     Watts = 86;
 }
-Power Supply Descirption Enumeration:
+
+Power Supply Description Enumeration:
 	 (key: "Hardware Serial Number", value: D8XXXXXXXXXXXXXXX)
 	 (key: "Is Charging", value: 1)
 	 (key: "Time to Full Charge", value: 45)
@@ -40,6 +41,6 @@ Power Supply Descirption Enumeration:
 	 (key: "Power Source State", value: AC Power)
 	 (key: "Type", value: InternalBattery)
 	 (key: "BatteryHealth", value: Good)
-
+```
 
 Hope someone finds it useful!

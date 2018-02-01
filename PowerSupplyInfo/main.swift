@@ -21,7 +21,7 @@ let psList = IOPSCopyPowerSourcesList(psInfo).takeRetainedValue() as [CFTypeRef]
 
 for ps in psList {
     if let psDesc = IOPSGetPowerSourceDescription(psInfo, ps).takeUnretainedValue() as? [String: Any] {
-        print("Power Supply Descirption Enumeration:")
+        print("Power Supply Description Enumeration:")
         for element in psDesc {
             print("\t",  element )
         }
